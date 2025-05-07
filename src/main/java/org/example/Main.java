@@ -1,12 +1,19 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import Config.DatabaseConfig;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hospital System Welcome!!");
+        DatabaseConfig dbConfig = new DatabaseConfig();
+
+        // Test the database connection
+        boolean isConnected = dbConfig.testConnection();
+
+        if (isConnected) {
+            System.out.println("Database connection is active.");
+        } else {
+            System.out.println("Failed to connect to the database.");
+        }
 
     }
 }
