@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExecuteEmployeeQuery {
+public abstract class ExecuteEmployeeQuery {
     DatabaseConfig databaseConfig;
 
 
@@ -65,5 +65,7 @@ public class ExecuteEmployeeQuery {
             stmt.executeUpdate();
         }
     }
+
+    public abstract Connection getConnection() throws SQLException;
 }
 

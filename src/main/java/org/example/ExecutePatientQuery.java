@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExecutePatientQuery {
+public abstract class ExecutePatientQuery {
     DatabaseConfig databaseConfig;
 
     public ExecutePatientQuery() {
@@ -77,5 +77,5 @@ public class ExecutePatientQuery {
     }
 
 
-
+    public abstract Connection getConnection() throws SQLException;
 }
