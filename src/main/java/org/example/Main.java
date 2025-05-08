@@ -1,13 +1,24 @@
 package org.example;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ExecutePatientQuery patientDao = new ExecutePatientQuery();
-        ExecuteEmployeeQuery employeeDao = new ExecuteEmployeeQuery(null);
+        ExecutePatientQuery patientDao = new ExecutePatientQuery() {
+            @Override
+            public Connection getConnection() throws SQLException {
+                return null;
+            }
+        };
+        ExecuteEmployeeQuery employeeDao = new ExecuteEmployeeQuery(null) {
+            @Override
+            public Connection getConnection() throws SQLException {
+                return null;
+            }
+        };
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
